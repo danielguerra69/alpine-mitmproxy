@@ -6,13 +6,19 @@ Mitmproxy is a man in the middle proxy.
 
 # Usage
 
+Terminal use :
 ```bash
 mkdir mitmproxy
 cd mitmproxy
-docker run -p 8080:8080 -v $(pwd):/root/.mitmproxy -ti mitmproxy
+docker run --rm -p 8080:8080 -v $(pwd):/root/.mitmproxy -ti mitmproxy
 ```
 
-This leaves the certificates in your current dir.
+ Daemon :
+ ```bash
+ docker run -p 8080:8080 --name mitm -d danielguerra/alpine-mitmproxy mitmdump
+
+After running mitmproxy the certificates are in your
+current dir.
 Copy mitmproxy-ca.pem to your browser and add it
 to your certificate authority. Set your browser
 proxy or your proxy environment variable.
