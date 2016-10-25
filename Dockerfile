@@ -3,8 +3,7 @@ RUN apk --update --no-cache add py2-pip ca-certificates gcc libffi-dev python2-d
  libxslt-dev libjpeg-turbo-dev zlib-dev
 RUN pip install --upgrade pip
 RUN pip install mitmproxy
-RUN echo "export LANG=en_US.UTF-8">> /etc/profile
-RUN source /etc/profile
+ENV LANG=en_US.UTF-8
 VOLUME /root/.mitmproxy
 EXPOSE 8080
 CMD ["mitmproxy"]
