@@ -7,4 +7,4 @@ RUN echo "export LANG=en_US.UTF-8">> /etc/profile
 RUN source /etc/profile
 VOLUME /root/.mitmproxy
 EXPOSE 8080
-CMD ["/bin/sh","mitmproxy,"-T","--host"]
+CMD ["mitmproxy"]
