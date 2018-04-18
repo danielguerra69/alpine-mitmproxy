@@ -16,6 +16,7 @@ docker run --rm -p 8080:8080 -v $(pwd):/root/.mitmproxy -ti mitmproxy
  Daemon :
  ```bash
  docker run -p 8080:8080 --name mitm -d danielguerra/alpine-mitmproxy mitmdump
+ ```
 
 After running mitmproxy the certificates are in your
 current dir.
